@@ -14,9 +14,6 @@ export const exceptionMiddleware = (err: Error, req: Request, res: Response, nex
         message = err.message || 'An error occurred';
     }
 
-    // const statusCode = isHttpException.statusCode ? err.statusCode : 500;
-    // const message = isHttpException.message || 'Internal Server Error';
-
     res.status(statusCode).json({
         status: 'error',
         statusCode,
